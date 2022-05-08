@@ -31,10 +31,15 @@ VOLUME /var/cache/nginx
 
 ## Remove default nginx index page
 RUN rm -rf /usr/share/nginx/html/*
+RUN chmod -R 777 /var/log/nginx
+RUN chmod -R 777 /var/cache/nginx
+RUN chmod -R 777 /user/share/nginx
+RUN chmod -R 777 /etc/nginx
 
 # Copy from the stahg 1
 COPY --from=builder /react-ui/build /usr/share/nginx/html
 
-EXPOSE 3000 80
+
+EXPOSE 3000 3001 80
 
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
