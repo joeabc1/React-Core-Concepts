@@ -1,7 +1,6 @@
 // React
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Currency from 'react-currency-formatter';
 
 class OrdersList extends Component {
   static propTypes = {
@@ -16,7 +15,7 @@ class OrdersList extends Component {
             return <tr key={orderItem.id}>
               <td>{orderItem.productName}</td>
               <td>
-                <Currency quantity={orderItem.itemCost} />
+                <p> print currency </p>
               </td>
             </tr>
           })}
