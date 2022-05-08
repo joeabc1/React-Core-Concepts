@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Currency from 'react-currency-formatter';
+//import Currency from 'react-currency-formatter';
 
 import { capitalize } from '../utils';
 
@@ -12,7 +12,7 @@ const CustomerRow = ({ customer }) => {
       </td>
       <td>{customer.city}</td>
       <td>
-        <Currency quantity={customer.orderTotal} />
+        <p> here is customer order total </p>
       </td>
     </tr>
   );
