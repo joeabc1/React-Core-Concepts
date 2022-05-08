@@ -21,6 +21,12 @@ FROM nginx:alpine
 COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
 #COPY ./.nginx/nginx.conf /etc/nginx/nginx.conf
 
+#ADD ./scripts/* /scripts/
+#RUN chmod +x /scripts/*
+#VOLUME /scripts
+VOLUME /etc/nginx
+VOLUME /user/share/nginx
+
 ## Remove default nginx index page
 RUN rm -rf /usr/share/nginx/html/*
 
