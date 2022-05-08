@@ -1,7 +1,7 @@
 // React
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Currency from 'react-currency-formatter';
+//import Currency from 'react-currency-formatter';
 
 // Utilities
 import _orderBy from 'lodash.orderby';
@@ -96,7 +96,7 @@ class CustomersList extends Component {
               <tr>
                 <td colSpan="2" />
                 <td>
-                  <Currency quantity={customersOrderTotal} />
+                 <p>here i print orders total </p>
                 </td>
               </tr>
             ) : (
