@@ -16,14 +16,16 @@ ENV JSFOLDER=/opt/app/static/js/main*.js
 #joelCOPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./config/nginx.conf /etc/nginx/nginx.conf
 RUN mkdir -p /opt/app && chown -R nginx:nginx /opt/app && chmod -R 775 /opt/app
+RUN mkdir -p /var/cache/nginx/client_temp
+RUN  chmod -R 777 /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid  /var/cache/nginx/client_temp
+
 RUN chown -R nginx:nginx /var/cache/nginx && \
    chown -R nginx:nginx /var/log/nginx && \
    chown -R nginx:nginx /etc/nginx/conf.d
 RUN touch /var/run/nginx.pid && \
    chown -R nginx:nginx /var/run/nginx.pid  
  
-RUN  chmod -R 777 /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid
-RUN chown -R nginx:nginx /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid
+RUN chown -R nginx:nginx /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid /var/cache/nginx/client_temp
 
 #RUN chgrp -R nginx /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid && \
  # chmod -R 775 /var/cache/nginx /var/run /var/log/nginx /var/run/nginx.pid
