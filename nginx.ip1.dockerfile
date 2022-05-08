@@ -15,7 +15,3 @@ COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
 
 # docker build -t nginx-react -f nginx.prod.dockerfile .
 # docker run -p 8080:80 nginx-react
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
